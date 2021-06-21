@@ -27,12 +27,19 @@ export class FormComponent implements OnInit {
       this.incomeService.incomes.push(
         new Income(this.descriptionInput,this.valueInput)
       );
+      this.clearForm();
     }
     if(this.operationType === "expense"){
       this.expenseService.expenses.push(
         new Expense(this.descriptionInput,this.valueInput)
       );
+      this.clearForm();
     }
+  }
+
+  clearForm(){
+    this.descriptionInput = "";
+    this.valueInput = null;
   }
 
 }

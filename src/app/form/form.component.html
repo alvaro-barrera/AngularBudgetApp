@@ -1,9 +1,9 @@
-<form>
+<form (ngSubmit)="f.form.valid && handleNewRecord()" #f="ngForm">
   <div class="agregar">
     <div class="agregar_contenedor">
       <select
       [ngClass]="{redfocus:operationType === 'expense'}"
-      
+
       (change)="handleOperationType($event)" class="agregar_tipo">
         <option value="income" selected>+</option>
         <option value="expense">-</option>
@@ -15,14 +15,17 @@
         placeholder="Agregar Descripción"
         name="descriptionInput"
         [(ngModel)]="descriptionInput"
+        required
       />
       <input
       [ngClass]="{redfocus:operationType === 'expense'}"
       type="number" class="agregar_valor" placeholder="Valor"
       name="valueInput"
-      [(ngModel)]="valueInput"/>
+      [(ngModel)]="valueInput"
+      required
+      />
       <button
-      type="submit" (click)="handleNewRecord()"
+      type="submit"
        class="agregar_btn">
         <i
       [ngClass]="{red:operationType === 'expense'}"
