@@ -8,6 +8,7 @@ import { ExpenseComponent } from './expense/expense.component';
 import { HeaderComponent } from './header/header.component';
 import { ExpenseService } from './expense/expense.service';
 import { IncomeService } from './income/income.service';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,7 @@ import { IncomeService } from './income/income.service';
     ExpenseComponent,
     HeaderComponent,
   ],
-  imports: [BrowserModule],
+  imports: [BrowserModule,FormsModule],
   providers: [IncomeService, ExpenseService],
   bootstrap: [AppComponent],
 })
